@@ -1,0 +1,108 @@
+header {
+    height: 50px;
+    width: 100%;
+    background: linear-gradient(to right, #299eff, #b41dff);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+    -webkit-animation: 10s cubic-bezier(0.55, 0, 0.1, 1) infinite alternate;
+    animation: 10s cubic-bezier(0.55, 0, 0.1, 1) infinite alternate;
+}
+
+header h1 {
+    font-family: Verdana, sans-serif;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 25%;
+    text-transform: uppercase;
+    color: #ffffff;
+    font-size: 20px;
+    -webkit-animation: 12s move-title ease-out infinite reverse; /* Reducí la duración a 5s */
+    animation: 12s move-title ease-out infinite reverse; /* Reducí la duración a 5s */
+}
+
+@-webkit-keyframes move-title {
+    0% {
+        transform: translateX(-100%); /* Inicia fuera del borde izquierdo */
+    }
+    100% {
+        transform: translateX(calc(100% + 50px)); /* Llega más allá del borde derecho */
+    }
+}
+
+@keyframes move-title {
+    0% {
+        transform: translateX(-100%); /* Inicia fuera del borde izquierdo */
+    }
+    100% {
+        transform: translateX(calc(100% + 50px)); /* Llega más allá del borde derecho */
+    }
+}
+
+nav {
+    width: 100%;
+    overflow: hidden;
+    display: grid; /* Cambié el display a grid */
+    grid-template-columns: auto 0.9fr auto;  /* 3 columnas */
+    align-items: center; /* Centra verticalmente el contenido */
+    padding: 0; /* Añade espaciado interno para mayor claridad */
+}
+
+#logo-container {
+    display: flex;
+    align-items: center; /* Centra verticalmente la imagen dentro del contenedor */
+}
+
+#navigator {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centra horizontalmente el contenido */
+}
+
+#navigator a {
+    font-family: Verdana, sans-serif;
+    font-weight: bold;
+    margin-top: 5px;
+    color: black;
+    text-decoration: none;
+    padding: 14px 16px;
+    display: inline-block;
+    text-transform: uppercase;
+}
+
+#navigator a:hover {
+    color: #a20dff;
+}
+
+nav img {
+    margin-top: 5px;
+    width: 80px;
+    height: 80px;
+}
+
+#login-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; /* Centra horizontalmente el contenido */
+}
+
+.button:hover {
+    background-color: #a20dff;
+}
+
+.button {
+    color: #ffffff;
+    background-color: #5852ff;
+    border: none;
+    border-radius: 50%;
+    padding: 15px;
+    margin-left: auto; /* Empuja el botón a la derecha */
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.button:hover {
+    background-color: #7a74ff;
+}

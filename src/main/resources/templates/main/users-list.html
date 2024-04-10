@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>List of Users</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+
+<div class="text-center"></div>
+
+<div class="container mt-lg-5">
+    <h2 class="text-center">List of Users</h2>
+
+    <!-- Botones para filtrar -->
+    <div class="text-center mb-3">
+        <button class="btn btn-info btn-lg" onclick="filterUsers('player')">Mostrar jugadores</button>
+        <button class="btn btn-info btn-lg" onclick="filterUsers('admin')">Mostrar admins</button>
+        <button class="btn btn-info btn-lg" onclick="filterUsers('projectManager')">Mostrar project managers</button>
+        <a th:href="@{/users}" class="btn btn-success btn-lg">Mostrar todos los usuarios</a>
+    </div>
+
+    <table class="table table-bordered table-striped">
+        <thead class="thead-dark">
+        <tr>
+            <th>ID</th>
+            <th>Email</th>
+            <th>Password</th>
+            <th>Username</th>
+            <th>Role</th>
+        </tr>
+        </thead>
+        <tbody>
+        <!-- Filas de usuarios -->
+        <tr th:each="user : ${users}" class="user-row" data-role="${user.role.name}">
+            <td th:text="${user.id}"></td>
+            <td th:text="${user.email}"></td>
+            <td th:text="${user.password}"></td>
+            <td th:text="${user.username}"></td>
+            <td th:text="${user.role.name}"></td>
+        </tr>
+        </tbody>
+    </table>
+    <a th:href="@{/admin}" class="btn btn-danger btn-lg">Volver al dashboard
+    </a>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<script th:inline="javascript">
+    function filterUsers(role) {
+        window.location.href = "/filterByRole?role=" + role;
+    }
+</script>
+
+</body>
+</html>

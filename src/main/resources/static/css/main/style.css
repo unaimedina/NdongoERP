@@ -1,0 +1,146 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #ffffff;
+}
+
+.slider {
+    margin-top: 5px;
+}
+
+.slide_viewer {
+    height: 80vh;
+    overflow: hidden;
+    position: relative;
+}
+
+.slide_group {
+    height: 100%;
+    position: relative;
+    width: 100%;
+}
+
+.slide {
+    display: none;
+    height: 100%;
+    position: absolute;
+    width: 100%;
+}
+
+.slide:first-child {
+    display: block;
+}
+
+.slide:nth-of-type(1) {
+    background: url("https://ak.picdn.net/shutterstock/videos/1056687167/thumb/2.jpg");
+    background-size: cover;
+}
+
+.slide:nth-of-type(2) {
+    background: url("https://i.ytimg.com/vi/f5vWwcnMMG0/sddefault.jpg");
+    background-size: cover;
+}
+
+.slide:nth-of-type(3) {
+    background: url("https://img2.rtve.es/i/?w=1600&i=1666518929770.jpg");
+    background-size: cover;
+}
+
+.slide:nth-of-type(4) {
+    background: url("https://static.motor.es/fotos-noticias/2020/03/que-coche-es-rayo-mcqueen-202066150-1585635516_1.jpg");
+    background-size: cover;
+}
+
+@media only screen and (max-width: 767px) {
+    .previous_btn {
+        left: 50px;
+    }
+    .next_btn {
+        right: 50px;
+    }
+}
+
+#icon {
+    margin-top: 10px;
+}
+
+footer {
+    background-color: #ffffff;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+footer img {
+    width: 200px;
+    height: 200px;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 160vh;
+    margin-top: 20px;
+}
+
+.footer-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.spacer {
+    margin-right: 300px;
+}
+
+.footer-item h3 {
+    font-family: Verdana, sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #000000;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.footer-item ul {
+    list-style: none;
+}
+
+.footer-item ul li {
+    margin-bottom: 5px;
+}
+
+.footer-item ul li a {
+    text-decoration: none;
+    color: #000000;
+}
+
+.footer-item ul li a:hover {
+    color: #a20dff;
+}
+
+@media only screen and (max-width: 767px) {
+    .footer-container {
+        flex-direction: column;
+    }
+    .footer-item {
+        margin-bottom: 20px;
+    }
+}
+
+.legal-copy {
+    font-family: Verdana, sans-serif;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: #604a79;
+    font-size: 15px;
+    margin-top: -5px;
+}
+
+.down {
+    margin-top: 6vh;
+}

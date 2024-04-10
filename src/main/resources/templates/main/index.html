@@ -1,0 +1,129 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ndongo ERP</title>
+    <!-- Header CSS -->
+    <link rel="stylesheet" type="text/css" href="/static/css/header.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/main/style.css">
+</head>
+<body>
+<header>
+    <h1>
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+             class="bi bi-megaphone-fill" viewBox="0 0 16 16">
+            <path d="M13 2.5a1.5 1.5 0 0 1 3 0v11a1.5 1.5 0 0 1-3 0zm-1 .724c-2.067.95-4.539 1.481-7 1.656v6.237a25.222 25.222 0 0 1 1.088.085c2.053.204 4.038.668 5.912 1.56zm-8 7.841V4.934c-.68.027-1.399.043-2.008.053A2.02 2.02 0 0 0 0 7v2c0 1.106.896 1.996 1.994 2.009a68.14 68.14 0 0 1 .496.008 64 64 0 0 1 1.51.048zm1.39 1.081c.285.021.569.047.85.078l.253 1.69a1 1 0 0 1-.983 1.187h-.548a1 1 0 0 1-.916-.599l-1.314-2.48a65.81 65.81 0 0 1 1.692.064c.327.017.65.037.966.06z"/>
+        </svg>
+        <span>
+            AVIIISEEEEEEEEEEEEEEEN A TOOOODOS SUUS AMIGOOOS
+        </span>
+    </h1>
+</header>
+<nav>
+    <div id="logo-container">
+        <a href="/"><img src="/static/img/logo.png" alt="Ndongo ERP"></a>
+    </div>
+    <div id="navigator">
+        <a href="#inicio">Inicio</a>
+        <a href="#equipos">Equipos</a>
+        <a href="#avisos">Avisos</a>
+    </div>
+    <div sec:authorize="!isAuthenticated()">
+        <div class="login-container">
+            <a href="/login">
+                <button class="button">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                         class="bi bi-person-fill"
+                         viewBox="0 0 16 16">
+                        <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
+                    </svg>
+                </button>
+            </a>
+        </div>
+    </div>
+    <div sec:authorize="isAuthenticated()">
+        <div class="login-container">
+            <a href="/profile">
+                <button class="button">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                         class="bi bi-person-fill"
+                         viewBox="0 0 16 16">
+                        <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
+                    </svg>
+                </button>
+            </a>
+        </div>
+        <div sec:authorize="hasRole('ADMIN')">
+            <a href="/admin">
+                <button class="button">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                         class="bi bi-asterisk" viewBox="0 0 16 16">
+                        <path d="M8 0a1 1 0 0 1 1 1v5.268l4.562-2.634a1 1 0 1 1 1 1.732L10 8l4.562 2.634a1 1 0 1 1-1 1.732L9 9.732V15a1 1 0 1 1-2 0V9.732l-4.562 2.634a1 1 0 1 1-1-1.732L6 8 1.438 5.366a1 1 0 0 1 1-1.732L7 6.268V1a1 1 0 0 1 1-1"/>
+                    </svg>
+                </button>
+            </a>
+        </div>
+        <p th:text="${#authentication.name}"></p>
+    </div>
+</nav>
+<main>
+    <div class="slider">
+        <div class="slide_viewer">
+            <div class="slide_group">
+                <div class="slide">
+                </div>
+                <div class="slide">
+                </div>
+                <div class="slide">
+                </div>
+                <div class="slide">
+                </div>
+            </div>
+        </div>
+    </div><!-- End // .slider -->
+    <div class="sponsors">
+        <!-- Aquí irá un slider de sponsors -->
+    </div>
+</main>
+<footer>
+    <div class="footer-container">
+        <div class="footer-item">
+            <img src="/static/img/logo.png" alt="Ndongo ERP">
+        </div>
+        <div class="spacer"></div>
+        <div class="footer-item down">
+            <h3>Información</h3>
+            <ul>
+                <li><a href="#">Sobre nosotros</a></li>
+                <li><a href="#">Contacto</a></li>
+                <li><a href="#">Política de privacidad</a></li>
+                <li><a href="#">Términos y condiciones</a></li>
+            </ul>
+        </div>
+        <div class="footer-item down">
+            <h3>Redes sociales</h3>
+            <ul>
+                <li><a href="#">Facebook</a></li>
+                <li><a href="#">Twitter</a></li>
+            </ul>
+        </div>
+        <div class="footer-item down">
+            <h3>Equipos</h3>
+            <ul>
+                <li><a hreF="#">VALORANT</a></li>
+                <li><a hreF="#">Counter Strike 2</a></li>
+                <li><a hreF="#">Rainbow Six Siege</a></li>
+                <li><a hreF="#">League of Legends</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="legal-copy">
+        <p>&copy; 2023 - Ndongo ERP Software</p>
+    </div>
+</footer>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script type="text/javascript" src="/static/js/main/script.js"></script>
+</body>
+</html>
